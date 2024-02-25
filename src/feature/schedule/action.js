@@ -9,8 +9,17 @@ const useScheduleActions = () => {
     function generateSchedule(timePerDay) {
         return new Promise((resolve, reject) => {
             dispatch(fetchingData());
+            const modifiedTasks = tasks.map(t => ({
+                ...t,
+                orderId: parseInt(t.orderId),
+                urgency: parseInt(t.urgency),
+                easiness: parseInt(t.easiness),
+                importance: parseInt(t.importance),
+                dependency: t.dependency ? parseInt(t.dependency) : null,
+                estimatedTime: parseFloat(Number(t.estimatedTime).toFixed(1))
+            }))
             const url = '/generate';
-            ApiRequest.post(url, { timePerDay, tasks })
+            ApiRequest.post(url, { timePerDay: parseFloat(timePerDay), tasks: modifiedTasks })
             .then(res => {
                 dispatch(fetchDataSuccess(res.data));
                 resolve(res.data);

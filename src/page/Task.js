@@ -9,8 +9,10 @@ import LoadingButton from "../components/LoadingButton";
 import AddIcon from '@mui/icons-material/AddCircleOutline';
 import { useSchedule } from "../feature";
 import ScheduleResult from "./ScheduleResult";
+import { useNavigate } from "react-router-dom";
 
 const Task = () => {
+    const navigate = useNavigate();
     const { isLoading, tasks, schedule, updateTask, createNewTask, deleteTask, generateSchedule } = useSchedule();
     const [csvMode, setCsvMode] = React.useState(false);
     const [timePerDay, setTimePerDay] = React.useState(null);
@@ -41,7 +43,7 @@ const Task = () => {
 
     function generate() {
         generateSchedule(timePerDay)
-        .then(data => console.log(data))
+        .then(data => navigate("/schedule"))
         .catch(err => console.error(err));
     }
 
