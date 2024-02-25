@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom"
 import RootLayout from "../layout/RootLayout"
 import Home from "../page/Home"
 import Task from "../page/Task"
+import ScheduleResult from "../page/ScheduleResult"
 
 const AppRoutes = () => {
     return useRoutes([{
@@ -15,7 +16,11 @@ const AppRoutes = () => {
             },
             {
                 path: 'tasks',
-                element: <Task/>
+                element: <Task/>,
+            },
+            {
+                path: 'schedule',
+                element: <ScheduleResult/>
             }
         ]
     }])

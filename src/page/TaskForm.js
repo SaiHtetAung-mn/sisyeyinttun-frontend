@@ -72,6 +72,25 @@ const TaskForm = ({ addNewTask, editTask, open=false, onClose, mode="create", ta
                     <Box>
                         <TextField
                             fullWidth
+                            label="Task Title"
+                            variant="outlined"
+                            size="small"
+                            defaultValue={taskToEdit?.title}
+                            error={Boolean(errors.title)}
+                            // helperText={errors.orderId?.message ?? ''}
+                            {
+                                ...register('title', {
+                                    required: 'Task Title is required',
+                                })
+                            }
+                        />
+                        <FormHelperText sx={{color: '#FF0000'}}>
+                                {errors.title?.message ?? ''}
+                        </FormHelperText>
+                    </Box>
+                    <Box>
+                        <TextField
+                            fullWidth
                             label="Description"
                             variant="outlined"
                             size="small"

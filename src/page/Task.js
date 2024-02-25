@@ -82,7 +82,6 @@ const Task = () => {
                 }}
                 onCellClick={(e) => {e.defaultMuiPrevented = false}}
             />
-            <ScheduleResult sx={{ mt: 5 }}/>
         </Box>
     )
 }
