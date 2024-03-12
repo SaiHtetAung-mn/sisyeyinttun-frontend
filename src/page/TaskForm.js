@@ -88,7 +88,7 @@ const TaskForm = ({ addNewTask, editTask, open=false, onClose, mode="create", ta
                                 {errors.title?.message ?? ''}
                         </FormHelperText>
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <TextField
                             fullWidth
                             label="Description"
@@ -105,7 +105,7 @@ const TaskForm = ({ addNewTask, editTask, open=false, onClose, mode="create", ta
                         <FormHelperText sx={{color: '#FF0000'}}>
                                 {errors.description?.message ?? ''}
                         </FormHelperText>
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TextField
                             fullWidth

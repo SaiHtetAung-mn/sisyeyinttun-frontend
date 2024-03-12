@@ -20,7 +20,7 @@ const Task = () => {
 
     const taskColumns = [
         { field: 'orderId', headerName: 'Id' },
-        { field: 'description', headerName: 'Description', flex: 1, sortable: false },
+        { field: 'title', headerName: 'Title', flex: 1, sortable: false },
         { field: 'importance', headerName: 'Importance', flex: 1, sortable: false },
         { field: 'urgency', headerName: 'Urgency', flex: 1, sortable: false },
         { field: 'easiness', headerName: 'Easiness', flex: 1, sortable: false },
